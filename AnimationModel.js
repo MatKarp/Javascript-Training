@@ -6,7 +6,7 @@ function AnimationModel() {
                 return 'Living';
             },
             getFrameName: function () {
-                return '1.jpg';
+                return '1';
             },
             getButtonNames: function () {
                 return ['Garage'];
@@ -16,10 +16,10 @@ function AnimationModel() {
 
     this.getLinkBy = function (startNodeName, endNodeName) {
         if (startNodeName == 'Living' && endNodeName == 'Garage') {
-            return ['2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'];
+            return this.generateNumbersInStringFormat(1, 32);
         }
         if (startNodeName == 'Garage' && endNodeName == 'Living') {
-            return ['7.jpg', '6.jpg', '5.jpg', '4.jpg', '3.jpg', '2.jpg'];
+            return this.generateNumbersInStringFormat(32, 1);
         }
         return null;
     };
@@ -31,7 +31,7 @@ function AnimationModel() {
                     return 'Garage';
                 },
                 getFrameName: function () {
-                    return "8.jpg"
+                    return "32"
                 },
                 getButtonNames: function () {
                     return ['Living'];
@@ -44,7 +44,7 @@ function AnimationModel() {
                     return 'Living';
                 },
                 getFrameName: function () {
-                    return "1.jpg"
+                    return "1"
                 },
                 getButtonNames: function () {
                     return ['Garage'];
@@ -52,4 +52,18 @@ function AnimationModel() {
             }
         }
     };
+
+    this.generateNumbersInStringFormat = function(start, end) {
+        var numbers = [];
+        if(start < end) {
+            for(var i = start; i <= end; i++) {
+                numbers.push(String(i));
+            }
+        } else{
+            for(var i = start; i >= end; i--) {
+                numbers.push(String(i));
+            }
+        }
+        return numbers;
+    }
 }
