@@ -1,8 +1,21 @@
 <html>
     <head>
+        <style>
+            .test{
+                height:40px;
+                width:80px;
+            }
+        </style>
     </head>
     <body>
-        <p>dupa</p>
+        <button class="test" onclick="animationManager.init()">Start</button>
+        <br/>
+        <br/>
+        <img id="animation" height="80%" width="100%">
+        <br/>
+        <p id="buttons"></p>
+        <script src="AnimationModel.js"></script>
+        <script src="AnimatorManager.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
