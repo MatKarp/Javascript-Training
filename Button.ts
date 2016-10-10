@@ -1,7 +1,7 @@
 class Button {
 
-    tagId: string;
-    onClickFunction;
+    private tagId: string;
+    private onClickFunction;
 
     constructor(tagId: string, onClickFunction) {
         this.tagId = tagId;

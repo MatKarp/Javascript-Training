@@ -3,9 +3,9 @@
 var animation = new Animation();
 
 this.animation.setOnStop(() => {
-    console.log('koniec');
+    document.getElementById('text').setAttribute('value', 'Koniec');
 });
 
-animation.run();
+animation.play();
 
 

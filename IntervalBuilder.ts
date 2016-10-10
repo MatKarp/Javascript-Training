@@ -1,14 +1,9 @@
 ///<reference path="Interval.ts"/>
 
-class IntervalBuidier {
-    private tempDelay;
+class IntervalBuilder {
     private tempOnRun;
     private tempOnStop;
-
-    delay(number) {
-        this.tempDelay = number;
-        return this;
-    }
+    private tempDelay;
 
     onRun(code) {
         this.tempOnRun = code;
@@ -20,11 +15,16 @@ class IntervalBuidier {
         return this;
     }
 
+    delay(number) {
+        this.tempDelay = number;
+        return this;
+    }
+
     build() {
         let interval = new Interval();
-        interval.setDelay(this.tempDelay);
         interval.setOnRun(this.tempOnRun);
         interval.setOnStop(this.tempOnStop);
+        interval.setDelay(this.tempDelay);
         return interval;
     }
 }

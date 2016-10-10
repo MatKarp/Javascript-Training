@@ -1,6 +1,6 @@
 ///<reference path="Animation.ts"/>
 var animation = new Animation();
 this.animation.setOnStop(function () {
-    console.log('koniec');
+    document.getElementById('text').setAttribute('value', 'Koniec');
 });
-animation.run();
+animation.play();
