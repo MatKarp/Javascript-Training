@@ -6,10 +6,6 @@ var IntervalBuidier = (function () {
         this.tempDelay = number;
         return this;
     };
-    IntervalBuidier.prototype.onStart = function (code) {
-        this.tempOnStart = code;
-        return this;
-    };
     IntervalBuidier.prototype.onRun = function (code) {
         this.tempOnRun = code;
         return this;
@@ -21,7 +17,6 @@ var IntervalBuidier = (function () {
     IntervalBuidier.prototype.build = function () {
         var interval = new Interval();
         interval.setDelay(this.tempDelay);
-        interval.setOnStart(this.tempOnStart);
         interval.setOnRun(this.tempOnRun);
         interval.setOnStop(this.tempOnStop);
         return interval;

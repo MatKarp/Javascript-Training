@@ -1,21 +1,16 @@
 class Interval {
-    delay: number;
-    onStart;
-    onRun;
-    onStop;
+    private delay: number;
+    private onRun;
+    private onStop;
+    private timeout;
 
     run() {
-        this.onStart();
         this.onRun();
-        setTimeout(this.onStop, this.delay);
+        this.timeout = setTimeout(this.onStop, this.delay);
     }
 
     setDelay(number) {
         this.delay = number;
-    }
-
-    setOnStart(code) {
-        this.onStart = code;
     }
 
     setOnRun(code) {
