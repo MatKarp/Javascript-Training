@@ -20,4 +20,8 @@ class Interval {
     setOnStop(code) {
         this.onStop = code;
     }
+
+    static buildier() {
+        return new IntervalBuilder();
+    }
 }

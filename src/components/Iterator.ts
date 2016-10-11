@@ -1,6 +1,6 @@
 class Iterator {
 
-    counter = 1;
+    counter = 0;
 
     next() {
         this.counter++;

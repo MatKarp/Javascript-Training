@@ -1,5 +1,3 @@
-///<reference path="Interval.ts"/>
-
 class IntervalBuilder {
     private tempOnRun;
     private tempOnStop;

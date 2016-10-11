@@ -1,4 +1,4 @@
-///<reference path="Animation.ts"/>
+///<reference path="components/Animation.ts"/>
 
 var animation = new Animation();
 

@@ -1,10 +1,7 @@
-///<reference path="Iterator.ts"/>
-///<reference path="IntervalBuilder.ts"/>
-
 class Animation {
-    private onStop;
+    private onStop: () => void;
     private iterator = new Iterator();
-    private intervalBuilder = new IntervalBuilder();
+    private intervalBuilder = Interval.buildier();
 
     play() {
         if (this.hasNextFrame()) {
@@ -21,12 +18,8 @@ class Animation {
     private playNextFrame() {
         var number = this.nextFrame();
         this.intervalBuilder
-            .onRun(() => {
-                document.getElementById("animation").setAttribute("src", "resources/" + number + ".jpg");
-            })
-            .onStop(() => {
-                this.play();
-            })
+            .onRun(() => document.getElementById("animation").setAttribute("src", "resources/" + number + ".jpg"))
+            .onStop(() => {this.play()})
             .delay(40)
             .build()
             .run();
